@@ -1,5 +1,5 @@
 # S3-CDN
-Lightweight CDN server (NGINX) for S3-Backend
+Lightweight CDN server (NGINX) for S3-Backend (e.g. minio)
 
 > Inspired by https://github.com/silinternational/docker-sync-with-s3
 

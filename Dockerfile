@@ -2,8 +2,8 @@ FROM alpine:3.11
 
 # Inspired by https://github.com/silinternational/docker-sync-with-s3
 RUN addgroup -S www-data && adduser -S www-data -G www-data
-RUN apk update \
-    && apk add python py-pip rsyslog rsyslog-tls ca-certificates openssl gettext nginx \
+RUN apk --no-cache update \
+    && apk add --no-cache python py-pip ca-certificates openssl gettext nginx \
     && pip install awscli
 
 WORKDIR /app
