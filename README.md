@@ -1,7 +1,7 @@
 # S3-CDN
 Lightweight CDN server (NGINX) for S3-Backend (e.g. minio)
 
-Docker: https://hub.docker.com/repository/docker/indece/s3-cdn
+Docker: https://hub.docker.com/r/indece/s3-cdn
 
 > Inspired by https://github.com/silinternational/docker-sync-with-s3
 
