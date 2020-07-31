@@ -20,9 +20,15 @@ echo "[default]"                              > /root/.aws/credentials
 echo "aws_access_key_id = ${ACCESS_KEY}"     >> /root/.aws/credentials
 echo "aws_secret_access_key = ${SECRET_KEY}" >> /root/.aws/credentials
 
+# Run first sync
+echo "Inital sync ..."
+aws --color=off --no-paginate s3 sync ${S3SYNC_ARGS} ${SOURCE_PATH} /data
+
 # Start nginx in foreground
+echo "Starting nginx ..."
 nginx -g 'daemon off;' &
 
 # start cron in foreground
+echo -n "Starting crond ..."
 crond -f
 

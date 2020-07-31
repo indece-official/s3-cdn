@@ -9,7 +9,6 @@ RUN apk update \
 WORKDIR /app
 COPY ./docker/entrypoint.sh /app/
 COPY ./docker/crontab.tpl /app/
-COPY ./docker/crontab-syslog.tpl /app/
 COPY ./docker/nginx.conf /etc/nginx/nginx.conf
 
 RUN chmod 755 /app/entrypoint.sh
