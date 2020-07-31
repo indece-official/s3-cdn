@@ -22,3 +22,6 @@ Opens a port on 8080 and serves the files from the bucket
 | SOURCE_PATH | yes | | Source-Path for s3 sync (e.g. 's3://my-bucket-name/') |
 | CRON_SCHEDULE | | "*/15 * * * *" | Cron shedule for s3 sync |
 | S3SYNC_ARGS | | "" | Extra options passed to aws-cli for s3 sync |
+
+### Health checks
+The path `/health` always returns 200 `ok` when nginx is running (this doesn't verify if the s3-sync is ok).
