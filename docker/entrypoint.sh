@@ -11,8 +11,8 @@ echo "###### /etc/crontabs/root"
 cat /etc/crontabs/root
 echo "#########################"
 
-rm -rf /data
 mkdir -p /data
+rm -rf /data/*
 
 # setup env
 mkdir -p /root/.aws
