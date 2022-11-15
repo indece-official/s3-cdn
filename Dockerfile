@@ -1,9 +1,16 @@
-FROM alpine:3.15.4
+FROM alpine:3.16.2
+
+LABEL org.opencontainers.image.vendor="indece UG (haftungsbeschränkt)"
+LABEL org.opencontainers.image.url="https://github.com/indece-official/s3-cdn"
+LABEL org.opencontainers.image.source="https://github.com/indece-official/s3-cdn"
+LABEL org.opencontainers.image.licenses="MIT"
+LABEL org.opencontainers.image.title="S3-CDN"
+LABEL org.opencontainers.image.description="Lightweight CDN server (NGINX) for S3-Backend (e.g. minio)"
 
 # Inspired by https://github.com/silinternational/docker-sync-with-s3
 RUN adduser -S www-data -G www-data
-RUN apk --no-cache update \
-    && apk add --no-cache python3 py-pip ca-certificates openssl gettext nginx \
+RUN apk upgrade --no-cache \
+    && apk add --no-cache python3 py3-pip ca-certificates openssl gettext nginx \
     && pip install awscli
 
 WORKDIR /app
