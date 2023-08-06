@@ -1,4 +1,4 @@
-FROM alpine:3.16.2
+FROM alpine:3.18.2
 
 LABEL org.opencontainers.image.vendor="indece UG (haftungsbeschränkt)"
 LABEL org.opencontainers.image.url="https://github.com/indece-official/s3-cdn"
