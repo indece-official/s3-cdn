@@ -9,9 +9,11 @@ LABEL org.opencontainers.image.description="Lightweight CDN server (NGINX) for S
 
 # Inspired by https://github.com/silinternational/docker-sync-with-s3
 RUN adduser -S www-data -G www-data
-RUN apk upgrade --no-cache \
-    && apk add --no-cache python3 py3-pip ca-certificates openssl gettext nginx \
-    && pip install awscli
+RUN apk upgrade --no-cache && \
+    apk add --no-cache python3 py3-pip ca-certificates openssl gettext nginx && \
+    pip install awscli && \
+    pip cache purge && \
+    apk del --purge py3-pip
 
 WORKDIR /app
 COPY ./docker/entrypoint.sh /app/
