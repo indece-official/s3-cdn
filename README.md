@@ -6,8 +6,15 @@ Docker: https://hub.docker.com/r/indece/s3-cdn
 > Inspired by https://github.com/silinternational/docker-sync-with-s3
 
 ## Usage
+
+With Amazon AWS:
 ```
 docker run -p 8080:8080 -e ACCESS_KEY=my-accesskey -e SECRET_KEY=my-secretkey -e SOURCE_PATH='s3://my-s3-bucket/' indece/s3-cdn:latest
+```
+
+With Minio:
+```
+docker run -p 8080:8080 -e ACCESS_KEY=my-accesskey -e SECRET_KEY=my-secretkey -e SOURCE_PATH='s3://my-s3-bucket/' -e S3SYNC_ARGS="--endpoint-url=http://myminioserver:9000" indece/s3-cdn:latest
 ```
 
 Opens a port on 8080 and serves the files from the bucket
